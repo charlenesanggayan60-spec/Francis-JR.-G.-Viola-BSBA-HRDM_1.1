@@ -1,0 +1,59 @@
+/* Francis Jr G. Viola - shared styles (Bootstrap 5 + custom) */
+:root { --accent: #149ddd; --side: 280px; }
+body { font-family: "Roboto", system-ui, sans-serif; }
+h1, h2, h3, h4, h5 { font-family: "Raleway", sans-serif; }
+html { scroll-behavior: smooth; }
+section { scroll-margin-top: 20px; }
+
+/* Sidebar */
+#header { background: #040b14; color: #fff; }
+@media (min-width: 1200px) {
+  #header { position: fixed; top: 0; bottom: 0; left: 0; width: var(--side); padding: 28px 20px; display: flex; flex-direction: column; overflow-y: auto; }
+  main, footer { margin-left: var(--side); }
+}
+.avatar {
+  width: 120px; height: 120px; border-radius: 50%; position: relative; overflow: hidden; margin: 0 auto 14px;
+  background: var(--accent); display: flex; align-items: center; justify-content: center;
+  font: 800 2.4rem "Raleway", sans-serif; border: 6px solid rgba(255,255,255,.15);
+}
+.avatar img, .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+#navmenu .nav-link { color: #a8a9b4; font: 600 1rem "Raleway", sans-serif; border-radius: .5rem; padding: .7rem 1rem; }
+#navmenu .nav-link i { margin-right: .6rem; font-size: 1.1rem; }
+#navmenu .nav-link:hover, #navmenu .nav-link.active { color: #fff; background: rgba(255,255,255,.08); }
+#navmenu .nav-link.active { box-shadow: inset 3px 0 0 var(--accent); }
+.menu-btn { position: fixed; top: 12px; right: 14px; z-index: 1040; width: 44px; height: 44px; padding: 0; border-radius: 50%; }
+
+/* Common */
+.text-accent { color: var(--accent) !important; }
+.btn-accent { --bs-btn-bg: var(--accent); --bs-btn-border-color: var(--accent); --bs-btn-color: #fff; --bs-btn-hover-bg: #0f84b9; --bs-btn-hover-border-color: #0f84b9; --bs-btn-hover-color: #fff; --bs-btn-active-bg: #0d729f; --bs-btn-active-border-color: #0d729f; --bs-btn-active-color: #fff; }
+.btn-outline-accent { --bs-btn-color: var(--accent); --bs-btn-border-color: var(--accent); --bs-btn-hover-bg: var(--accent); --bs-btn-hover-border-color: var(--accent); --bs-btn-hover-color: #fff; }
+.section-title h2 { font-weight: 800; position: relative; padding-bottom: .75rem; margin-bottom: 2rem; }
+.section-title h2::after { content: ""; position: absolute; left: 0; bottom: 0; width: 56px; height: 4px; background: var(--accent); border-radius: 4px; }
+.icon-circle { width: 48px; height: 48px; flex: none; border-radius: 50%; background: rgba(20,157,221,.12); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; }
+.form-control:focus { border-color: var(--accent); box-shadow: 0 0 0 .2rem rgba(20,157,221,.2); }
+
+/* Home */
+.hero { min-height: 100vh; display: flex; align-items: center; }
+.hero h1 { font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.6rem); }
+.photo { position: relative; max-width: 340px; margin: 0 auto; }
+.frame {
+  aspect-ratio: 4/5; border-radius: 1.5rem; overflow: hidden; position: relative; color: #fff;
+  background: linear-gradient(135deg, var(--accent), #0b5f86); display: flex; align-items: center; justify-content: center;
+  font: 800 5rem "Raleway", sans-serif;
+}
+.chip { position: absolute; font-weight: 600; font-size: .85rem; }
+.chip.c1 { top: 10%; left: -12%; } .chip.c2 { top: 48%; right: -10%; } .chip.c3 { bottom: 8%; left: -6%; }
+@media (max-width: 767px) { .hero { min-height: auto; padding-top: 90px; } .chip { font-size: .72rem; } }
+.progress { height: 8px; }
+.progress-bar { background: var(--accent); width: 0; transition: width 1.1s ease; }
+.timeline { border-left: 2px solid var(--bs-border-color); padding-left: 1.4rem; }
+.tl-item { position: relative; margin-bottom: 1.4rem; }
+.tl-item::before { content: ""; position: absolute; left: -1.95rem; top: .55rem; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bs-body-bg); }
+.year-badge { background: rgba(20,157,221,.12); color: var(--accent); }
+blockquote { border-left: 4px solid var(--accent); }
+
+/* Contact page */
+.page-banner { padding: 90px 0 40px; }
+@media (min-width: 1200px) { .page-banner { padding-top: 60px; } }
+
+@media (prefers-reduced-motion: reduce) { .progress-bar { transition: none; } html { scroll-behavior: auto; } }
